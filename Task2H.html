@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task Two</title>
+<!----><link rel="stylesheet" href="Task2C.css"> 
+</head>
+<body>
+
+<canvas id="canvas" width="600" height="600" style= "border:3px solid green"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let x = canvas.width / 2;
+let y = canvas.height / 2;
+
+function move(direction) {
+switch (direction) {
+case 'forward':
+ctx.lineTo(x, y - 50);
+y -= 50;
+break;
+case 'backward':
+ctx.lineTo(x, y + 50);
+y += 50;
+break;
+case 'left':
+ctx.lineTo(x - 50, y);
+x -= 50;
+break;
+case 'right':
+ctx.lineTo(x + 50, y);
+x += 50;
+break;
+}
+ctx.stroke();
+}
+
+// Initialize starting point
+ctx.moveTo(x, y);
+
+</script>
+
+ <!-- --><form action="Task2P.php" method="post" id="1"> 
+ 
+  <button id="l1" name="btn1" type="submit" onclick="move('left')" >Left</button>
+  
+  <button id="r2" name="btn2" type="submit" onclick="move('right')" >Right</button>
+ 
+ <button id="b3" name="btn3"  type="submit" onclick="move('backward')" >Backward</button>
+
+<button id="f4" name="btn4"  type="submit" onclick="move('forward')" >Forward</button>
+
+ <button id="s5" name="btn5"  type="submit" >Stop</button>
+
+<!-- <button type="submit" value="Submit">Left</button> --> 
+ <!----> </form> 
+
+
+ 
+
+   
+
+</body>
+</html>
